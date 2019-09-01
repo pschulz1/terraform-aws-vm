@@ -46,6 +46,12 @@ variable "ssh_public_key_name" {
   default     = null
 }
 
+variable "key_name" {
+  description = "Specific the name of an existing AWS key pair if you want to use an existing one."
+  type        = string
+  default     = null
+}
+
 variable "tags" {
   type    = map
   default = null
