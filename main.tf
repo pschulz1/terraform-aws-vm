@@ -22,7 +22,7 @@ locals {
   }
 
   ami_id         = var.ami_id == null ? data.aws_ami.ubuntu.id : var.ami_id
-  ssh_public_key = var.ssh_public_key == null ? var.ssh_public_key_name : aws_key_pair.main[0].key_name
+  // ssh_public_key = var.ssh_public_key == null ? var.ssh_public_key_name : aws_key_pair.main[0].key_name
 }
 
 resource "aws_key_pair" "main" {
