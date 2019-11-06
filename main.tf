@@ -22,14 +22,7 @@ locals {
   }
 
   ami_id         = var.ami_id == null ? data.aws_ami.ubuntu.id : var.ami_id
-  // ssh_public_key = var.ssh_public_key == null ? var.ssh_public_key_name : aws_key_pair.main[0].key_name
 }
-
-// resource "aws_key_pair" "main" {
-//   key_name   = "${local.common_tags.environment}-${var.name}-key"
-//   public_key = "${var.ssh_public_key}"
-// }
-
 
 resource "aws_instance" "main" {
   ami                         = var.ami_id
